@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <title>www.usernamegamingstudios.com</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      background-color: #1C4271;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+
+      padding: 24px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+
+      font-size: 32px;
+      font-weight: 700;
+
+      color: white;
+    }
+
+    p {
+      margin: 0 0 24px;
+
+      max-width: 500px;
+
+      font-size: 17px;
+      line-height: 1.5;
+      font-weight: 400;
+
+      color: white;
+    }
+
+    button {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+
+      padding: 12px 24px;
+
+      border: none;
+      border-radius: 80px;
+
+      background-color: white;
+      color: #1C4271;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>User's Page</h1>
+
+  <p>
+    Subscribe to my channel:
+  </p>
+
+  <button id="myButton">
+    Open YouTube
+  </button>
+
+  <script>
+    const button = document.getElementById("myButton");
+
+    button.addEventListener("click", function () {
+
+      // Your YouTube channel
+      const youtubeChannel =
+        "https://www.youtube.com/@UserNameGamingStudiosOfficial";
+
+      // Try opening the channel in the Android YouTube app
+      window.location.href =
+        "intent://www.youtube.com/@UserNameGamingStudiosOfficial" +
+        "#Intent;" +
+        "scheme=https;" +
+        "package=com.google.android.youtube;" +
+        "end";
+
+      // Browser fallback
+      setTimeout(function () {
+        window.location.href = youtubeChannel;
+      }, 1500);
+
+    });
+  </script>
+
+</body>
+</html>
